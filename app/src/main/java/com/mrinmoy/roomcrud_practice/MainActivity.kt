@@ -41,17 +41,17 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerView()
 
-        subscriberViewModel.message.observe(this,Observer{
+        subscriberViewModel.message.observe(this, Observer {
             it.getContentIfNotHandled()?.let {
-                Toast.makeText(this,it,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }
         })
     }
 
     private fun initRecyclerView() {
         binding.rvSubscriberList.layoutManager = LinearLayoutManager(this)
-        adapter=MyRecyclerViewAdapter({selectedItem:Subscriber->listItemClick(selectedItem)})
-        binding.rvSubscriberList.adapter=adapter
+        adapter = MyRecyclerViewAdapter({ selectedItem: Subscriber -> listItemClick(selectedItem) })
+        binding.rvSubscriberList.adapter = adapter
         displaySubscriberList()
     }
 
@@ -62,9 +62,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun listItemClick(subscriber: Subscriber)
-    {
-       // Toast.makeText(this,"Selected name ${subscriber.name}",Toast.LENGTH_SHORT).show()
+    private fun listItemClick(subscriber: Subscriber) {
+        // Toast.makeText(this,"Selected name ${subscriber.name}",Toast.LENGTH_SHORT).show()
         subscriberViewModel.initUpdateAndDelete(subscriber)
 
     }
