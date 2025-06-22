@@ -3,57 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <!-- Add variables if using data binding -->
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:id="@+id/listItemLayout"
-        android:padding="12dp">
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="12dp"
+        app:strokeColor="@android:color/darker_gray"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@android:color/white"
+        android:foreground="?attr/selectableItemBackground">
 
-        <!-- Thumbnail Image -->
-        <ImageView
-            android:id="@+id/imgThumbnail"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="12dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_dummy_thumbnail"
-            android:padding="5dp"
-            android:background="#3F51B5"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listItemLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Thumbnail Image -->
+            <ImageView
+                android:id="@+id/imgThumbnail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                app:tint="@color/white"
+                android:padding="5dp"
+                android:src="@drawable/ic_dummy_thumbnail"
+                android:backgroundTint="?attr/colorPrimary"
+                android:background="@drawable/bg_circle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#fff" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- Name -->
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Full Name"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imgThumbnail"
-            app:layout_constraintTop_toTopOf="@id/imgThumbnail" />
+            <!-- Name -->
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="16sp"
+                android:layout_marginLeft="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/imgThumbnail"
+                app:layout_constraintTop_toTopOf="@id/imgThumbnail"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Email -->
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="email@example.com"
-            android:textColor="#666666"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/imgThumbnail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvName"
-            app:layout_constraintTop_toBottomOf="@id/tvName" />
+            <!-- Email -->
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="email@example.com"
+                android:textColor="?android:textColorSecondary"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                app:layout_constraintStart_toStartOf="@id/tvName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/imgThumbnail" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
